@@ -1,0 +1,209 @@
+body{
+  font-family: 'Montserrat', sans-serif !important;
+  color: #4d4d4d;
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.navbar{
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 2rem;
+  li{
+    color: #4d4d4d;
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 2rem;
+    cursor: pointer !important;
+    a{
+      text-decoration: none !important;
+      color: black;
+      font-size: 1.3rem;
+      cursor: inherit !important;
+    }
+  }
+  img{
+    position: absolute;
+    right: 2.5rem;
+    top: 2.5rem;
+    width: 3rem;
+  }
+}
+.fig{
+  position: fixed;
+  top: 9rem;
+  right: 15rem;
+  img{
+    height: 25vw;
+  }
+  .text{
+    color: white;
+    background-color: #fb6bb6;
+    padding: 5px 8px;
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    transform: translate(100%, -25%);
+    margin-left: -3rem;
+    max-width: 200px;
+    width: 200px;
+    text-align: justify;
+    text-align-last: left;
+  }
+}
+.tokenDisplay{
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  padding: 1rem;
+  text-align: center;
+  th{
+    padding-bottom: 0.8rem;
+    font-weight: 400;
+  }
+  th:nth-of-type(2){
+    width: 120px;
+  }
+  th:first-of-type{
+    width: 150px;
+    text-align: right;
+  }
+  .title{
+    text-align: center !important;
+    font-weight: 600;
+  }
+}
+.home{
+  .text{
+    width: 250px;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    img{
+      width: 45vw;
+    }
+  }
+  .desc{
+    margin-left: 11rem;
+    width: 350px;
+    text-align: justify;
+    text-align-last: left;
+    font-size: 1.3rem;
+  }
+  .tech{
+    margin: 7rem auto 3rem;
+    width: fit-content;
+    .techContainer{
+      display: inline-block;
+      margin: 0 3rem;
+      img{
+        height: 6rem;
+      }
+    }
+  }
+  h2{
+    display: block;
+    margin: 5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+.signup, .login{
+  padding-top: 4rem;
+  padding-right: 45vw;
+  h1{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  form{
+    width: 400px;
+    margin: 0 auto;
+    input{
+      font-family: inherit !important;
+      font-size: 1.1rem;
+      text-align: center;
+      display: block;
+      width: 65%;
+      margin: 1.2rem auto;
+      padding: 10px 5px;
+      border: none;
+      border-bottom: black solid 1px;
+    }
+    input[type=submit]{
+      width: 40%;
+      background-color: #4d4d4d;
+      color: white;
+      font-weight: 600;
+      border-radius: 5px;
+    }
+  }
+  h2{
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+}
+.profile{
+  padding-top: 4rem;
+  padding-right: 45vw;
+  text-align: center;
+}
+.about{
+  .tech{
+    a{
+      display: inline-block;
+      margin: 2rem 3rem;
+      font-weight: 600;
+    }
+  }
+}
+.about-container{
+  width: 40vw;
+  margin: 4vw 7vw;
+  text-align: justify;
+  text-align-last: left;
+  .token{
+    word-break: break-all;
+    font-size: 1.2rem;
+  }
+  .ill-img{
+    width: 100%;
+  }
+  .quote{
+    margin-bottom: 2rem;
+    padding: 0 1.5rem;
+  }
+  div{
+    margin: 2rem 0;
+  }
+  button{
+    background-color: #4d4d4d;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    font-family: inherit !important;
+    font-size: 1.1rem;
+    text-align: center;
+    display: block;
+    margin: 1.2rem auto;
+    padding: 10px 15px;
+    border: none;
+    border-bottom: black solid 1px;
+  }
+  h2{
+    margin-bottom: 2rem;
+    text-align: center;
+    text-align-last: center;
+  }
+}
+.codes{
+  width: 40vw;
+  margin: 4vw 7vw;
+  text-align: justify;
+  text-align-last: left;
+  h2{
+    text-align-last: center;
+    text-align: center;
+  }
+}
