@@ -1,4 +1,4 @@
-FROM node:12-slim
+FROM node:12.16
 WORKDIR /usr/src/app
 ENV PATH /app/node_modules/.bin:$PATH
 
