@@ -45,7 +45,7 @@ class ProfilePage extends Component {
                             <br/>
                             {data.me.email ? data.me.email : 'not given'}
                             <br/>
-                            <button onClick={()=>{updateQuery(); refetch()}}>Refetch data</button>
+                            <button onClick={()=>{refetch()}}>Refetch data</button>
                             <br/>
                             <Link to={'/example/logout'}>Logout</Link>
                         </div>

@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import Fig from "../components/Fig";
+import Gist from "react-gist";
 
 class Codes extends Component {
+
+//<script src="https://gist.github.com/bence-vass/3c363248e8dacfd7eaba9c5ddcc658b1.js"></script>
+
     render() {
         return (
             <div className={'codes'}>
@@ -22,6 +26,8 @@ class Codes extends Component {
                                     <a href="#refresh"><li>Refreshing token</li></a>
                                     <a href="#logout"><li>Logout Method</li></a>
                                     <a href="#expDisp"><li>Expiration Display</li></a>
+                                    <a href="#refetch"><li>Refetch Data</li></a>
+                                    <a href="#update"><li>Update Data</li></a>
                                 </ul>
                             </li>
 
@@ -40,9 +46,10 @@ class Codes extends Component {
                         </ul>
                     </div>
                 </Fig>
-                <a href="">
-                    <div>Source: Github repo</div>
+                <a href="https://github.com/bence-vass/GraphQlAuth" target="_blank">
+                    <div><h3>Source: Github repo</h3></div>
                 </a>
+                <script src="https://gist.github.com/bence-vass/3c363248e8dacfd7eaba9c5ddcc658b1.js"></script>
                 <div className={'prologue'} id={'prologue'}>
                     I would like to write more about the difficulties of this project. The goal of this
                     project was, that I could learn the usage of the GraphQl, the Apollo Client and the
@@ -73,6 +80,8 @@ class Codes extends Component {
                         <div>For those, who is interested in Graphene package, by default in the authorization
                         the package use "JWT" + token for identification instead of "Bearer".</div>
                     </div>
+                    <Gist id={'3c363248e8dacfd7eaba9c5ddcc658b1'} file={'index1.js'}/>
+
                     <h2 id={'store'}>Storing the tokens</h2>
                     <div>
                         After the authentication, the client should store the data. As far as I am concerned one
@@ -113,17 +122,50 @@ class Codes extends Component {
                         some kind of third party activity. In order to securely manage authentication data, I have
                         found that the easiest way is to logout the user and clear the store.
                     </div>
+                    <Gist id={'3c363248e8dacfd7eaba9c5ddcc658b1'} file={'index2.js'}/>
+
                     <h2 id={'logout'}>Logout Method</h2>
                     <div>
                         The logout method clears the localStorage, clear the Apollo store, and set the values to the
                         required value, then redirect to the home page.
                     </div>
+                    <Gist id={'3c363248e8dacfd7eaba9c5ddcc658b1'} file={'index3.js'}/>
+
                     <h2 id={'expDisp'}>Expiration Display</h2>
                     <div>
-                        On each token refresh, Apollo updates the expiration time in its store. The components
-                        refetch query on change and rerender itself. On change, from the current date and the
-                        given expiration time it calculates it in milliseconds and sets it in state.
+                        On each token refresh, Apollo updates the expiration time in its store. When the store is
+                        updated, Apollo automatically refetch the given queries and update the containing components.
+                        The components get the current time and expiration time and calculates the remaining interval
+                        in milliseconds, then set it as a state of the components.
                     </div>
+                    <h2 id={'refetch'}>Refetch data</h2>
+                    <div>
+                        With the refetch button on profile page you can update apollo cache with the new
+                        server-data. You can see the request and response in your browser developer mode.
+                        If the access token has expired, you can see the three request, that have been made.
+                        The first is the user info query, which returns in this case an token expiration
+                        error. Secondly, the Apollo link catch the error and refresh the access token, and
+                        last but not least the original user query, but now with valid data.
+                    </div>
+                    <h2 id={'update'}>Update data</h2>
+                    <div>
+                        When you update your profile data, a mutation has been made, which tells the server,
+                        what kind of modification you intend to do. Normally you should than make a query
+                        to update the displayed information, but apollo provide an update function with
+                        each mutation, which makes it possible to modify data in the store without actual
+                        query, it updates the stored data and handle it as it is newly queried data and
+                        rerender the components accordingly.
+                        <br/>
+                        In this scenerio the project has been set up this way, that the logged in user
+                        can query its data without any identification in the GraphQl request, it  only
+                        idetentifies by the Authorization header, therefor there is no need of use ids
+                        in this case. I made the mistake that I requested id in the update mutation, there
+                        for it got an id in the store too. After the update, when I tried to refetch data
+                        it gives me error. I think it is a corner-case, but still worth to mention. This
+                        problem can be resolved with the identical fields in both the queries and mutations.
+                    </div>
+                    <Gist id={'3c363248e8dacfd7eaba9c5ddcc658b1'} file={'ProfileUpdate.js'}/>
+
                 </div>
             </div>
         );

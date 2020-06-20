@@ -51,7 +51,7 @@ const authMiddleware = new ApolloLink((
 
     return forward(operation)
 },);
-const logoutLink = onError(({
+const tokenRefreshLink = onError(({
                                 graphQLErrors,
                                 networkError,
                                 operation,
@@ -105,7 +105,7 @@ const cache = new InMemoryCache();
 const client = new ApolloClient({
     cache: cache,
     link: from([
-        logoutLink,
+        tokenRefreshLink,
         authMiddleware,
         link,
     ]),

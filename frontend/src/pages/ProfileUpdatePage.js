@@ -64,7 +64,6 @@ class ProfileUpdatePage extends Component {
                     }
                 }
             }) => {
-                console.log(user);
                 cache.writeQuery({query: PROFILE, data:{me: user}})
             }}>
                 {(updateProfile, {data})=>{
