@@ -40,7 +40,7 @@ class Codes extends Component {
                             <li>
                                 <b>DevOps:</b>
                                 <ul>
-                                    <li>Docker</li>
+                                    <a href="#docker"><li>Docker</li></a>
                                 </ul>
                             </li>
                         </ul>
@@ -166,6 +166,21 @@ class Codes extends Component {
                     </div>
                     <Gist id={'3c363248e8dacfd7eaba9c5ddcc658b1'} file={'ProfileUpdate.js'}/>
 
+                    <h2 id={'docker'}>Docker</h2>
+                    <div>
+                        First of all, in developer mode the server would stop after it has successfuly started,
+                        inorder to prevent that, and make it run, you have to set <b>tty: true</b>. For hot reload
+                        you have to set the volumes, like it is in the docker code and also important, that you
+                        have to set <b>CHOKIDAR_USEPOLLING=true</b> in the envirement, unless it will not work.
+                    </div>
+                    <Gist id={'3c363248e8dacfd7eaba9c5ddcc658b1'} file={'docker-compose.dev.yml'}/>
+                    <div>
+                        For those <b>who use Mac for development</b>, please note that it is not exactly suitable
+                        for this purpose. I tried to use it with the following configuration, but the <b>latency made
+                        it unusable</b>. The request from the frontend toke from <b>15s to 40s to receive response</b>
+                        from the backend. It is being said, that it is some kind of sync error and it can be bypassed
+                        with the docker-sync library for mac, but I did not want to waste more time with this dead-end.
+                    </div>
                 </div>
             </div>
         );

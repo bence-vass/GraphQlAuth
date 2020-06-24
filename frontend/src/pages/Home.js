@@ -15,7 +15,7 @@ class Home extends Component {
                 <div className={'desc'}>
                     Example project for JWT authentication in an SPA React.js app with Apollo through GraphQl API
                 </div>
-                <Fig>
+                <Fig style={{position: 'absolute'}}>
                     Hello, It is a showcase example of the JWT Auth.
                     <br/>
                     Check out the demo on the <Link to={'/example'}>example page</Link>

@@ -5,6 +5,7 @@ body{
     text-decoration: none;
     color: inherit;
   }
+  line-height: 1.5rem;
 }
 .navbar{
   box-sizing: border-box;
@@ -195,6 +196,11 @@ body{
     margin-bottom: 2rem;
     text-align: center;
     text-align-last: center;
+  }
+  img{
+    width: 75%;
+    display: block;
+    margin: 2rem auto;
   }
 }
 .codes{

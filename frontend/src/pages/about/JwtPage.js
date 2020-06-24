@@ -20,10 +20,12 @@ function copyToClipboard(text) {
 
 const JwtPage = () => {
     return (
-        <div className={'about-container'}>
+        <div>
             <Fig>About the jwt</Fig>
+
+        <div className={'about-container'}>
             <h2>JSON Web Tokens</h2>
-            <div className={'quote'}>
+            <div>
                 <i>"JSON Web Tokens are an open, industry standard RFC 7519
                 method for representing claims securely between two parties."
                 </i>
@@ -60,6 +62,8 @@ const JwtPage = () => {
             In this project, after the request, the server revoke the previous token and only with the
             newly generated credentials can be the process repeated.</div>
         </div>
+        </div>
+
     );
 };
 
