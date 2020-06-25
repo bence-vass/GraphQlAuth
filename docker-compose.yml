@@ -20,7 +20,7 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile.prebuilt
     ports:
       - 80:80
       - 443:443

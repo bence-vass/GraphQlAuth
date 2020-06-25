@@ -4,7 +4,8 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 COPY package.json .
 COPY package-lock.json .
-RUN npm install --no-optional --no-shrinkwrap --no-package-lock --loglevel=error
+RUN npm install --no-optional --no-shrinkwrap --no-packagls
+e-lock --loglevel=error
 
 
 COPY . .
