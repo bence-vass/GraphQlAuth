@@ -36,7 +36,7 @@ const ERRORS_TO_REFRESH = [
     'Signature has expired',
 ];
 
-const link = new HttpLink({uri: 'http://graphqlauth.work/graphql/'});
+const link = new HttpLink({uri: 'localhost:8000'});
 const authMiddleware = new ApolloLink((
     operation,
     forward) => {
