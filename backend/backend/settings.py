@@ -147,3 +147,5 @@ GRAPHQL_JWT = {
     'JWT_REFRESH_EXPIRATION_DELTA': timedelta(days=7),
 }
 CORS_ORIGIN_ALLOW_ALL = True
+SITE_URL = "https://graphqlauth.work/"
+
