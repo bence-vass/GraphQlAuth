@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="237" viewBox="0 0 840 237">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 103.001px;
+        fill: #e535ab;
+        font-family: "DIN Alternate";
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="text">
+    <text id="GraphQAuth" class="cls-1" transform="translate(78.022 152.617) scale(1.306)">GraphQAuth</text>
+  </g>
+</svg>
