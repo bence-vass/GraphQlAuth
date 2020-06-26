@@ -32,6 +32,7 @@ services:
       - ./frontend/nginx:/etc/nginx/conf.d
       - ./frontend/certbot/conf:/etc/letsencrypt
       - ./frontend/certbot/www:/var/www/certbot
+      - ./backend:/var/www/backend
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     restart: always
     links:
