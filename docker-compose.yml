@@ -27,7 +27,7 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./frontend/build:/usr/src/app
+      - ./frontend/build:/usr/share/nginx/html
       - ./frontend/nginx:/etc/nginx/conf.d
       - ./frontend/certbot/conf:/etc/letsencrypt
       - ./frontend/certbot/www:/var/www/certbot
