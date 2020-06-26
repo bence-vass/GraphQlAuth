@@ -5,7 +5,7 @@ const AboutPage = () => {
     return (
         <div>
             <Fig>Here you can learn more about the stacks</Fig>
-            hello112233
+            hello11223344
         </div>
     );
 };
