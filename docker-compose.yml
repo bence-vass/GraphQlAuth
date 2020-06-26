@@ -3,16 +3,18 @@ services:
   ##################
   # Django Backend
   ##################
-
-#  backend:
-#    build:
-#      context: ./backend
-#      dockerfile: Dockerfile
-#    ports:
-#      - 8000:8000
-#    command: python manage.py runserver 0.0.0.0:8000
-#    volumes:
-#      - ./backend:/usr/src/backend-app
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: ./entrypoint.prod.sh
+    env_file:
+      -
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend:/usr/src/backend-app
+    restart: always
 
   ##################
   # React Frontend
@@ -31,7 +33,7 @@ services:
       - ./frontend/certbot/conf:/etc/letsencrypt
       - ./frontend/certbot/www:/var/www/certbot
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
-
+    restart: always
   certbot:
     image: certbot/certbot
     restart: unless-stopped
