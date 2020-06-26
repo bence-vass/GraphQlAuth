@@ -9,7 +9,7 @@ services:
       dockerfile: Dockerfile
     command: ./entrypoint.prod.sh
     env_file:
-      -
+      - web.prod.env
     ports:
       - 8000:8000
     volumes:
