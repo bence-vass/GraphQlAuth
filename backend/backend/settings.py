@@ -27,7 +27,7 @@ SECRET_KEY = '45yr#l-v)lfb-*u8xxfos3u1g!dbr_h)0329-zbc&48j)w=snh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', default=0)
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(",")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", default='*').split(",")
 
 
 # Application definition
@@ -127,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/staticfiles/'
-STATIC_ROOT = "/var/www/backend/static/"
+STATIC_ROOT = "all_static"
 
 GRAPHENE = {
     'SCHEMA': 'backend.schema.schema',
