@@ -27,8 +27,7 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./frontend:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./frontend/build:/usr/src/app
       - ./frontend/nginx:/etc/nginx/conf.d
       - ./frontend/certbot/conf:/etc/letsencrypt
       - ./frontend/certbot/www:/var/www/certbot
