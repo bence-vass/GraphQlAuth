@@ -36,14 +36,13 @@ class Login extends React.Component {
         }
         return (
             <Mutation mutation={LOGIN} onCompleted={res => {
-                console.log(res);
                 localStorage.setItem('token', res.tokenAuth.token);
                 localStorage.setItem('refreshToken', res.tokenAuth.refreshToken);
                 localStorage.setItem('exp', res.tokenAuth.payload.exp);
                 localStorage.setItem('refreshExp', res.tokenAuth.refreshExpiresIn);
 
                 this.setState({redirect: true});
-            }}>
+            }} onError={err=>console.log('Authentication error')}>
                 {(login, {data, loading, error, client}) => {
                     if (data) {
                         //console.log(data.tokenAuth.payload.exp);
@@ -66,6 +65,10 @@ class Login extends React.Component {
                                     },
                                 });
                             }}>
+                                {error ?
+                                    <div style={{textAlign: 'center'}}>
+                                        Please enter valid credentials
+                                    </div> : null}
                                 <input type="text" placeholder={'username'} required
                                        onChange={e => this.changeValue(e, 'username')}/>
                                 <input type="password" placeholder={'password'} required

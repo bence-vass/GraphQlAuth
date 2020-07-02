@@ -110,7 +110,7 @@ body{
     text-align: center;
   }
 }
-.signup, .login{
+.signup, .login, .update{
   padding-top: 4rem;
   padding-right: 45vw;
   h1{
@@ -120,6 +120,7 @@ body{
   form{
     width: 400px;
     margin: 0 auto;
+
     input{
       font-family: inherit !important;
       font-size: 1.1rem;
@@ -145,10 +146,51 @@ body{
     margin-top: 2rem;
   }
 }
+.update{
+  text-align: center;
+  input{
+    margin: 0 auto 3rem!important;
+  }
+  span{
+    font-weight: 600 !important;
+  }
+}
 .profile{
   padding-top: 4rem;
   padding-right: 45vw;
   text-align: center;
+  button{
+    font-family: inherit !important;
+    font-size: 1.1rem;
+    text-align: center;
+    display: block;
+    margin: 1.2rem auto;
+    padding: 10px 5px;
+    border: none;
+    border-bottom: black solid 1px;
+    width: 40%;
+    background-color: #4d4d4d;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+  }
+  span{
+    display: block;
+  }
+  span:first-of-type{
+    font-weight: 600;
+  }
+  span:last-of-type{
+    margin-bottom: 1.3rem;
+  }
+  .update-btn{
+    border: solid black 1px;
+    width: fit-content;
+    margin: 0 auto 1.5rem;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+  }
+
 }
 .about{
   .tech{
@@ -204,12 +246,18 @@ body{
   }
 }
 .codes{
-  width: 50vw;
+  width: 45vw;
   margin: 4vw 7vw;
   text-align: justify;
   text-align-last: left;
   h2{
     text-align-last: center;
+    text-align: center;
+  }
+}
+.network-err{
+  margin-top: 12rem;
+  h1,h3{
     text-align: center;
   }
 }

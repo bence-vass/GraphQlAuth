@@ -19,9 +19,12 @@ function copyToClipboard(text) {
 }
 
 const JwtPage = () => {
+    const exampleToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6' +
+        'IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36' +
+        'POk6yJV_adQssw5c';
     return (
         <div>
-            <Fig>About the jwt</Fig>
+            <Fig>JWT is commonly used tech for safety measures</Fig>
 
         <div className={'about-container'}>
             <h2>JSON Web Tokens</h2>
@@ -30,14 +33,22 @@ const JwtPage = () => {
                 method for representing claims securely between two parties."
                 </i>
             </div>
-            <div>This is your access token:</div>
             <div className={'token'}>
                 <b>{localStorage.getItem('token') ?
-                    localStorage.getItem('token').split('.').map((e, i)=>(
-                        <span><span style={{color: COLORS[i] }}>{e}</span>{i !== 2 ? '.' : null}</span>
-                    ))
+                    <div>
+                    <div>This is your access token:</div>
+                        {localStorage.getItem('token').split('.').map((e, i)=>(
+                        <span key={i}><span style={{color: COLORS[i] }}>{e}</span>{i !== 2 ? '.' : null}</span>
+                    ))}
+                    </div>
                     :
-                    null
+                    <div>
+                        <div>This is an example token:</div>
+                        {exampleToken.split('.').map((e, i)=>(
+                           <span key={i}><span style={{color: COLORS[i] }}>{e}</span>{i !== 2 ? '.' : null}</span>
+                        ))}
+                    </div>
+
                 }</b>
             </div>
             <div>It has three parts: the header, which contains the algorithm and token type, the payload

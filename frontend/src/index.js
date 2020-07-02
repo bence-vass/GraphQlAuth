@@ -35,8 +35,12 @@ const ERRORS_TO_REFRESH = [
     //'Token is required',
     'Signature has expired',
 ];
+let opts = {uri: `https://${window.location.hostname}/graphql/`}
+if(process.env.NODE_ENV === 'development'){
+   opts = {uri: `http://localhost:8000/graphql/`}
+}
+const link = new HttpLink(opts);
 
-const link = new HttpLink({uri: `https://${window.location.hostname}/graphql/`});
 const authMiddleware = new ApolloLink((
     operation,
     forward) => {
@@ -63,20 +67,26 @@ const tokenRefreshLink = onError(({
                 if (localStorage.getItem('refreshToken')) {
                     return new Observable(observe => {
                         refreshAccessToken(localStorage.getItem('refreshToken')).then(res => {
+                            console.log(res);
                             localStorage.setItem('token', res.data.refreshToken.token);
                             localStorage.setItem('refreshToken', res.data.refreshToken.refreshToken);
                             localStorage.setItem('exp', res.data.refreshToken.payload.exp);
+                            localStorage.setItem('refreshExp', res.data.refreshToken.refreshExpiresIn);
                             operation.setContext({
                                 headers: {
                                     authorization: 'JWT ' + res.data.refreshToken.token
                                 }
                             });
                             client.writeData({
-                                data: {exp: res.data.refreshToken.payload.exp},
+                                data: {
+                                    exp: res.data.refreshToken.payload.exp,
+                                    refreshExp: res.data.refreshToken.refreshExpiresIn,
+                                },
                             });
                         }).catch(err => {
                             console.log(err);
                             console.log('err in refresh');
+                            window.location.replace('/example/logout');
                         }).then(() => {
                             const subscriber = {
                                 next: observe.next.bind(observe),
@@ -92,10 +102,19 @@ const tokenRefreshLink = onError(({
                 } else {
 
                 }
-            } else {
-                console.log('unhandled');
-                console.log(err);
             }
+            else {
+                console.log('unhadnled grpahq')
+                console.log(err);
+                //window.location.replace('/example/logout')
+            }
+        }
+    }
+    if(networkError){
+        if('Failed to fetch' === networkError.message){
+            client.writeData({
+                data: {networkStatus: 0},
+            });
         }
     }
 

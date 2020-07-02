@@ -9,7 +9,6 @@ class SignupPage extends Component {
             <div className={'signup'}>
                 <Fig>Please sign up or login on the left</Fig>
                 <Signup/>
-                <Link to={'/example/login'}><h2>Login</h2></Link>
             </div>
         );
     }

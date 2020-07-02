@@ -1,11 +1,29 @@
 import React from 'react';
 import Fig from "../components/Fig";
+import {Link} from "react-router-dom";
 
 const AboutPage = () => {
     return (
         <div>
             <Fig>Here you can learn more about the stacks</Fig>
-            hello
+            <div className={'about-container'}>
+            <div>
+            It is a guide for newbies for those tech, if you wan to know more about the solutions, you
+            should read the <Link to={'codes'}>Codes section</Link>.
+                <a href="https://github.com/bence-vass/GraphQlAuth" target="_blank">
+                    <div><h3>Source: Github repo</h3></div>
+                </a>
+            </div>
+                <h2>The goal</h2>
+                <div>
+                    This project is a learning-project, I knew nothing about GraphQl nor Graphene at the
+                    beginning, but I could master some of the techniques, through this project. Hopefully
+                    it will be a great base for later, with more robust projects with similar stack. My
+                    solutions might not be the best, but I hope that others could learn about my mistakes
+                    and avoid them.
+                </div>
+            </div>
+
         </div>
     );
 };

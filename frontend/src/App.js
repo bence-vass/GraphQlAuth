@@ -5,7 +5,9 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-
+import {Redirect} from "react-router-dom";
+import {gql} from 'apollo-boost';
+import {Query} from 'react-apollo';
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Example from "./pages/Example";
@@ -22,7 +24,8 @@ import AboutPage from "./pages/AboutPage";
 import ProfileUpdatePage from "./pages/ProfileUpdatePage";
 import DockerPage from "./pages/about/DockerPage";
 import GraphqlPage from "./pages/about/GraphqlPage";
-
+import NetworkErrorPage from "./pages/NetworkErrorPage";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
     return (
@@ -31,12 +34,27 @@ function App() {
                 <Navbar/>
                 <Route path={'/about'}><About/></Route>
                 <Route path={'/example'}><ExpirationDisplay/></Route>
+                <Query query={gql`query{networkStatus}`} fetchPolicy={'cache-only'}>
+                    {({data,client})=>{
+                        if(data && data.networkStatus === 0){
+                            client.writeData({
+                                data: {networkStatus: 1},
+                            });
+                            return <Redirect to={'/network-error'}/>
+                        } else {
+                            return null
+                        }
+
+                    }}
+                </Query>
                 <Switch>
                     <Route path={'/example/signup'}><SignupPage/></Route>
                     <Route path={'/example/login'}><LoginPage/></Route>
                     <Route path={'/example/logout'}><LogoutPage/></Route>
                     <Route path={'/example/profile/update'}><ProfileUpdatePage/></Route>
+
                     <Route path={'/example/profile'}><ProfilePage/></Route>
+
                     <Route path={'/example'}><Example/></Route>
                     <Route path={'/codes'}><Codes/></Route>
                     <Route path={'/about/apollo'}><ApolloPage/></Route>
@@ -44,6 +62,7 @@ function App() {
                     <Route path={'/about/graphql'}><GraphqlPage/></Route>
                     <Route path={'/about/docker'}><DockerPage/></Route>
                     <Route exact path={'/about'}><AboutPage/></Route>
+                    <Route exact path={'/network-error'}><NetworkErrorPage/></Route>
                     <Route exact path={'/'}><Home/></Route>
                 </Switch>
             </Router>

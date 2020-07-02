@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "daab0ac06f3981c9c0d96f45e5f884b3",
+    "revision": "9bb3ee4e20a8492b5c89127cb58e71d8",
     "url": "/index.html"
   },
   {
-    "revision": "10979e5e53bee8ac9569",
-    "url": "/static/css/main.231132c5.chunk.css"
+    "revision": "d3defef3d01780bc35e8",
+    "url": "/static/css/main.abb06b4e.chunk.css"
   },
   {
-    "revision": "d9239bff5c089e3bbd88",
-    "url": "/static/js/2.be9a20ea.chunk.js"
+    "revision": "136ee56309abd1609b28",
+    "url": "/static/js/2.d45a99d5.chunk.js"
   },
   {
     "revision": "c87550333da8df8ab4c80bd1d6e9defb",
-    "url": "/static/js/2.be9a20ea.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.d45a99d5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "10979e5e53bee8ac9569",
-    "url": "/static/js/main.eb819412.chunk.js"
+    "revision": "d3defef3d01780bc35e8",
+    "url": "/static/js/main.3ac08f4f.chunk.js"
   },
   {
     "revision": "68a9665f6992de0c4239",
@@ -36,8 +36,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/apolloDiagram.ee7fbac9.svg"
   },
   {
+    "revision": "befc8dc820e6b15b879073f11401b3f9",
+    "url": "/static/media/certbot.befc8dc8.svg"
+  },
+  {
+    "revision": "b88b585481b1d1e5c322ca8bc29e591c",
+    "url": "/static/media/django.b88b5854.svg"
+  },
+  {
+    "revision": "ce63d4a1d50f749301699bf316409b3e",
+    "url": "/static/media/docker.ce63d4a1.svg"
+  },
+  {
     "revision": "63f18e4b83bdbe5b9c68ee9cefe1a469",
     "url": "/static/media/figill.63f18e4b.svg"
+  },
+  {
+    "revision": "45eecdbc4b119e5479617fa2e2cfff3d",
+    "url": "/static/media/graphene.45eecdbc.svg"
   },
   {
     "revision": "81b66a4ff4187e507d44a3928faa6045",
@@ -54,6 +70,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fc6d1dc88580d2900f1c85abb411243c",
     "url": "/static/media/jwtFig.fc6d1dc8.svg"
+  },
+  {
+    "revision": "cd2acf553d65af9e80df0b7b8019e6e1",
+    "url": "/static/media/nginx.cd2acf55.svg"
   },
   {
     "revision": "20223a72399ca6ddd4c9d70ffa212eca",

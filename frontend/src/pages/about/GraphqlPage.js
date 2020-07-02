@@ -6,7 +6,7 @@ import query from '../../images/graphqlquery.png'
 const GraphqlPage = () => {
     return (
         <div>
-            <Fig></Fig>
+            <Fig>It can highly increase user experience, especially areas with slower data connection</Fig>
             <div className={'about-container'}>
                 <h2>GraphQl</h2>
                 <i><div>

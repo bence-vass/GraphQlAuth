@@ -17,17 +17,33 @@ class Codes extends Component {
                             margin: '10px',
                             padding: 0,
                         }}>
-                            <a href="#prologue"><li><b>The goal</b></li></a>
+                            <a href="#prologue">
+                                <li><b>The goal</b></li>
+                            </a>
                             <li>
                                 <b>Frontend:</b>
                                 <ul>
-                                    <a href="#auth"><li>Authentication</li></a>
-                                    <a href="#store"><li>Storing the tokens</li></a>
-                                    <a href="#refresh"><li>Refreshing token</li></a>
-                                    <a href="#logout"><li>Logout Method</li></a>
-                                    <a href="#expDisp"><li>Expiration Display</li></a>
-                                    <a href="#refetch"><li>Refetch Data</li></a>
-                                    <a href="#update"><li>Update Data</li></a>
+                                    <a href="#auth">
+                                        <li>Authentication</li>
+                                    </a>
+                                    <a href="#store">
+                                        <li>Storing the tokens</li>
+                                    </a>
+                                    <a href="#refresh">
+                                        <li>Refreshing token</li>
+                                    </a>
+                                    <a href="#logout">
+                                        <li>Logout Method</li>
+                                    </a>
+                                    <a href="#expDisp">
+                                        <li>Expiration Display</li>
+                                    </a>
+                                    <a href="#refetch">
+                                        <li>Refetch Data</li>
+                                    </a>
+                                    <a href="#update">
+                                        <li>Update Data</li>
+                                    </a>
                                 </ul>
                             </li>
 
@@ -40,7 +56,9 @@ class Codes extends Component {
                             <li>
                                 <b>DevOps:</b>
                                 <ul>
-                                    <a href="#docker"><li>Docker</li></a>
+                                    <a href="#docker">
+                                        <li>Docker</li>
+                                    </a>
                                 </ul>
                             </li>
                         </ul>
@@ -58,13 +76,11 @@ class Codes extends Component {
                     the hope, that others might learn about my mistakes and I can give some practical advise
                     for other newcomers. If your not familiar with the following techs, I would recommend you
                     to read the <a href="/about">About Page</a> first, where I give a rough description about
-                    their fundamentals.
+                    their fundamentals. In the following, I would like to highlight some of the not so
+                    clear part of my learning path, if you are interested in the full codeing example
+                    you can check that out in the Github repository.
                 </div>
                 <div className={'frontend'}>
-                    <div>
-                        This is the most interesting part of this project after all, so take a look on it
-                        first.
-                    </div>
                     <h2 id={'auth'}>Authentication</h2>
                     <div>
                         In terms of basic queries and mutations with the usage of the documentation it was
@@ -76,9 +92,9 @@ class Codes extends Component {
                             (link here)</a>, at first I could not get the idea of the Apollo Links. So I definitely
                         would recommend to read the
                         <a href="https://www.apollographql.com/docs/link/overview/"> concept guide (link here)</a>
-                            , first and only then start coding.
+                        , first and only then start coding.
                         <div>For those, who is interested in Graphene package, by default in the authorization
-                        the package use "JWT" + token for identification instead of "Bearer".</div>
+                            the package use "JWT" + token for identification instead of "Bearer".</div>
                     </div>
                     <Gist id={'3c363248e8dacfd7eaba9c5ddcc658b1'} file={'index1.js'}/>
 
@@ -157,7 +173,7 @@ class Codes extends Component {
                         rerender the components accordingly.
                         <br/>
                         In this scenerio the project has been set up this way, that the logged in user
-                        can query its data without any identification in the GraphQl request, it  only
+                        can query its data without any identification in the GraphQl request, it only
                         idetentifies by the Authorization header, therefor there is no need of use ids
                         in this case. I made the mistake that I requested id in the update mutation, there
                         for it got an id in the store too. After the update, when I tried to refetch data
@@ -180,6 +196,16 @@ class Codes extends Component {
                         it unusable</b>. The request from the frontend toke from <b>15s to 40s to receive response</b>
                         from the backend. It is being said, that it is some kind of sync error and it can be bypassed
                         with the docker-sync library for mac, but I did not want to waste more time with this dead-end.
+                    </div>
+                    <div>
+                        There are multiple solutions for the React app hosting with Docker, but I found
+                        that, the best solution is to build the production code inside the container, but
+                        there is a serious drawback. On smaller sized <b>server with less than 2 GB RAM, it
+                        will eventually run out of memory</b>, and it will fail to compile, in my experience.
+                        Since my goal was, to keep the project low-budget and make it long term sustainable,
+                        I wanted to keep it on the AWS nano instance, I had to find an other solution. It was
+                        obvious to pre-build the code and then upload it. This solution could be more
+                        complicated, but it has its own advantage on the other side.
                     </div>
                 </div>
             </div>

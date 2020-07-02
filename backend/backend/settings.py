@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'users.apps.UsersConfig',
     'graphene_django',
     'django_filters',
     'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
@@ -143,9 +143,8 @@ AUTHENTICATION_BACKENDS = [
 GRAPHQL_JWT = {
     'JWT_VERIFY_EXPIRATION': True,
     'JWT_LONG_RUNNING_REFRESH_TOKEN': True,
-    'JWT_EXPIRATION_DELTA': timedelta(seconds=30),
-    'JWT_REFRESH_EXPIRATION_DELTA': timedelta(days=7),
+    'JWT_EXPIRATION_DELTA': timedelta(seconds=20),
+    'JWT_REFRESH_EXPIRATION_DELTA': timedelta(seconds=90),
 }
 CORS_ORIGIN_ALLOW_ALL = True
-#SITE_URL = "https://graphqlauth.work/"
 

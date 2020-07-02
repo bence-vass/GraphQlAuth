@@ -2,7 +2,7 @@ import graphene
 from graphene import ObjectType, Node
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
-
+from graphql import GraphQLError
 from django.contrib.auth import models as auth_models, get_user_model, password_validation
 from django.core.exceptions import ValidationError
 from . import validators
@@ -51,10 +51,15 @@ class ProfileMutation(graphene.Mutation):
         last_name = graphene.String()
         email = graphene.String()
 
+
     def mutate(self, info, first_name, last_name, email):
         user = get_user_model().objects.get(pk=info.context.user.id)
         user.first_name = first_name
         user.last_name = last_name
+        try:
+            validators.validate_unique_email(email)
+        except ValidationError as err:
+            raise Exception(err)
         user.email = email
         user.save()
         return ProfileMutation(user=user)

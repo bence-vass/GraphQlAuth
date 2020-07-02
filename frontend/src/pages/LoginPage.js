@@ -10,7 +10,6 @@ class LoginPage extends Component {
                 <Fig>Please sign up or login on the left</Fig>
                 <Login/>
                 <Link to={'/example/signup'}><h2>Sign Up</h2></Link>
-
             </div>
         );
     }

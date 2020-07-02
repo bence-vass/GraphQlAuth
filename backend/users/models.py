@@ -17,6 +17,8 @@ def revoke_refresh_token(sender, request, refresh_token, **kwargs):
 
 @receiver(token_issued)
 def issue_new_refresh_token(sender, request, user, **kwargs):
+    print('token issued')
     tokens = get_refresh_token_model().objects.filter(user=user)
+    print(tokens)
     [t.revoke() for t in tokens]
 
