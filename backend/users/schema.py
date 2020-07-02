@@ -53,14 +53,19 @@ class ProfileMutation(graphene.Mutation):
 
 
     def mutate(self, info, first_name, last_name, email):
+        if first_name == '' or last_name == '' or email == '':
+            raise Exception('Invalid input')
         user = get_user_model().objects.get(pk=info.context.user.id)
-        user.first_name = first_name
-        user.last_name = last_name
-        try:
-            validators.validate_unique_email(email)
-        except ValidationError as err:
-            raise Exception(err)
-        user.email = email
+        if not user.first_name == first_name:
+            user.first_name = first_name
+        if not user.last_name == last_name:
+            user.last_name = last_name
+        if not user.email == email:
+            try:
+                validators.validate_unique_email(email)
+            except ValidationError as err:
+                raise Exception(err)
+            user.email = email
         user.save()
         return ProfileMutation(user=user)
 
