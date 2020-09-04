@@ -16,7 +16,7 @@ const DockerPage = () => {
             <div>Docker can be useful for every kind of project in order to easily setup at all
             environment. My first intention was, to dockerize the back- and frontend even in the
             development state. I would recommend you to be cautious with your system specs, because
-            if you want to keep your project on low-budget, you have to compromise, agree with other
+            if you want to keep your project on low-budget, you have to compromise, accept with other
                 solutions.
             </div>
 

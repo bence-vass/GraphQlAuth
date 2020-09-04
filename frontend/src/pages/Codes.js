@@ -76,15 +76,15 @@ class Codes extends Component {
                     the hope, that others might learn about my mistakes and I can give some practical advise
                     for other newcomers. If your not familiar with the following techs, I would recommend you
                     to read the <a href="/about">About Page</a> first, where I give a rough description about
-                    their fundamentals. In the following, I would like to highlight some of the not so
-                    clear part of my learning path, if you are interested in the full codeing example
+                    each fundamentals. In the following, I would like to highlight some of the not so
+                    clear part of my learning path, if you are interested in the full code example
                     you can check that out in the Github repository.
                 </div>
                 <div className={'frontend'}>
                     <h2 id={'auth'}>Authentication</h2>
                     <div>
-                        In terms of basic queries and mutations with the usage of the documentation it was
-                        pretty easy to learn it, so the first authentication process was not a difficulty.
+                        In terms of basic queries and mutations, with the usage of the documentation it was
+                        pretty easy to learn, so the first authentication process was not a difficulty.
                         The client send a request the server response, it is simple, but for permission
                         required data you need to send your authentication token in the request, that cause
                         me the first issue. Despite the fact that it is well documented &nbsp;
@@ -93,8 +93,9 @@ class Codes extends Component {
                         would recommend to read the
                         <a href="https://www.apollographql.com/docs/link/overview/"> concept guide (link here)</a>
                         , first and only then start coding.
-                        <div>For those, who is interested in Graphene package, by default in the authorization
-                            the package use "JWT" + token for identification instead of "Bearer".</div>
+                        <div>For those, whom are interested in Graphene package, by default in the authorization
+                            the package use "JWT" + token for identification instead of "Bearer" in the header
+                            to identify the access token.</div>
                     </div>
                     <Gist id={'3c363248e8dacfd7eaba9c5ddcc658b1'} file={'index1.js'}/>
 
@@ -110,7 +111,7 @@ class Codes extends Component {
                         This is also a part of the project, which could not be understood unless you have read
                         the <a href="https://www.apollographql.com/docs/link/overview/">Apollo Link guide</a>.&nbsp;
                         The main concept, that if the access token is expired, with the refresh token the client
-                        request a new one. I think one of the best way, when the client made a request and the server
+                        request a new one. I think one of the best way out there, when the client made a request and the server
                         respond that signature token is expired, the client should make a token refresh call then
                         try again with the original request. There is no need to refresh tokens right after they are
                         expired, it is easier to catch errors and handle them.
@@ -126,7 +127,7 @@ class Codes extends Component {
                         a community link for this purpose &nbsp;
                         <a href="https://github.com/newsiberian/apollo-link-token-refresh">
                             (link here) called apollo-link-token-refresh
-                        </a>
+                        </a>&nbsp;
                         and at this point I can not emphasis enough the how useful could be reading through
                         a documentation.
                         <br/>
@@ -172,9 +173,9 @@ class Codes extends Component {
                         query, it updates the stored data and handle it as it is newly queried data and
                         rerender the components accordingly.
                         <br/>
-                        In this scenerio the project has been set up this way, that the logged in user
+                        In this scenario the project has been set up this way, that the logged in user
                         can query its data without any identification in the GraphQl request, it only
-                        idetentifies by the Authorization header, therefor there is no need of use ids
+                        identifies by the Authorization header, therefor there is no need of use ids
                         in this case. I made the mistake that I requested id in the update mutation, there
                         for it got an id in the store too. After the update, when I tried to refetch data
                         it gives me error. I think it is a corner-case, but still worth to mention. This
@@ -184,17 +185,17 @@ class Codes extends Component {
 
                     <h2 id={'docker'}>Docker</h2>
                     <div>
-                        First of all, in developer mode the server would stop after it has successfuly started,
+                        First of all, in developer mode the server would stop after it has successfully started,
                         inorder to prevent that, and make it run, you have to set <b>tty: true</b>. For hot reload
                         you have to set the volumes, like it is in the docker code and also important, that you
-                        have to set <b>CHOKIDAR_USEPOLLING=true</b> in the envirement, unless it will not work.
+                        have to set <b>CHOKIDAR_USEPOLLING=true</b> in the environment, unless it will not work.
                     </div>
                     <Gist id={'3c363248e8dacfd7eaba9c5ddcc658b1'} file={'docker-compose.dev.yml'}/>
                     <div>
                         For those <b>who use Mac for development</b>, please note that it is not exactly suitable
                         for this purpose. I tried to use it with the following configuration, but the <b>latency made
                         it unusable</b>. The request from the frontend toke from <b>15s to 40s to receive response</b>
-                        from the backend. It is being said, that it is some kind of sync error and it can be bypassed
+                        &nbsp;from the backend. It is being said, that it is some kind of sync error and it can be bypassed
                         with the docker-sync library for mac, but I did not want to waste more time with this dead-end.
                     </div>
                     <div>
@@ -204,7 +205,7 @@ class Codes extends Component {
                         will eventually run out of memory</b>, and it will fail to compile, in my experience.
                         Since my goal was, to keep the project low-budget and make it long term sustainable,
                         I wanted to keep it on the AWS nano instance, I had to find an other solution. It was
-                        obvious to pre-build the code and then upload it. This solution could be more
+                        obvious to pre-build the code and then upload it. This solution could not be more
                         complicated, but it has its own advantage on the other side.
                     </div>
                 </div>

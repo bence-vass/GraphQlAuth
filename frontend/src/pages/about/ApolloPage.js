@@ -16,8 +16,9 @@ const ApolloPage = () => {
             <div>
                 With Apollo you can query and mutate data, with the greatest ease, since you can use the
                 exact code that you use with GraphQl UI. In concept it is very different from Redux, but in
-                use it is pretty similar. It helps you to manage data through components, which makes Redux
-                in this case unnecessary, in my opinion.
+                it can be used pretty similarly. It helps you to manage data through components, which makes Redux
+                in this case unnecessary, in my opinion. It could eliminate the necessity of the usage of Redux,
+                because, Apollo`s store can rerender components, when the queried data has been changed in the store.
             </div>
             <img src={apolloCaching} alt="apollo graphq"/>
             <a href="https://www.apollographql.com/docs/"><div>

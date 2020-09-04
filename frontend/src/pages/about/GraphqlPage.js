@@ -17,8 +17,8 @@ const GraphqlPage = () => {
                 </div></i>
                 <img src={example} alt="qraphql"/>
                 <div>
-                    I had experiences with RestAPI, but after using GraphQl, I do not see RestAPI as the best solution
-                    for backend-frontend communication. Despite the fact that, I did not make any measurements between
+                    I had experiences with RestAPI, but after using GraphQl, I could not see RestAPI as the best solution
+                    for backend-frontend communication any more. Despite the fact that, I did not make any measurements between
                     these two in terms of computation demand and speed, but it is clear that the GraphQl is more
                     capable with the now days standards. With the solution that you only query data, that you need,
                     it is capable to sending significantly smaller requests and responses. After all, since everything
