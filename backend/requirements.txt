@@ -108,7 +108,7 @@ MarkupPy==1.14
 mccabe==0.6.1
 more-itertools==8.2.0
 mtcnn==0.1.0
-numpy==1.17.2
+numpy==1.22.0
 odfpy==1.4.0
 olefile==0.46
 openpyxl==3.0.0
